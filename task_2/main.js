@@ -1,21 +1,15 @@
 function duplicateEncode(word) {
-    const stringWord = word
-        .split(/()/)
-        .map((value, index, array) => {
-            for (const a of value) {
-                if (array.indexOf(a) === index) {
-                    return '(';
-                } else {
-                    return ')';
-                }
-            }
+    return word
+        .toLowerCase()
+        .split('')
+        .map((char, index, arr) => {
+            const isDuplicate = arr.some((c, i) => c === char && i !== index);
+            return isDuplicate ? ')' : '(';
         })
         .join('');
-
-    return console.log(stringWord);
 }
 
-duplicateEncode('din');
-duplicateEncode('recede');
-duplicateEncode('Success');
-duplicateEncode('(( @');
+console.log(duplicateEncode('din'));
+console.log(duplicateEncode('recede'));
+console.log(duplicateEncode('Success'));
+console.log(duplicateEncode('(( @'));
