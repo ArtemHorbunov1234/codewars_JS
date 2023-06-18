@@ -31,3 +31,6 @@ function solution(str) {
         return [];
     }
 }
+
+match(/.{2}/g);
+match(/.{1,2}/g);
