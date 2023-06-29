@@ -12,9 +12,10 @@ function countSmileys(arr) {
         })
         .filter((face) => face.length >= 2);
 
-    return console.log(arr.length);
+    return arr.length;
 }
-countSmileys([':~(', ':o>', ';o)', ';(', ';(', ':-D', ';-(']);
+countSmileys([';(', ';>', ';-(', ':~>', ';(', ';)', ';oD']);
 countSmileys([':D', ':~)', ';~D', ':)']);
 countSmileys([':)', ':(', ':D', ':O', ':;']);
-countSmileys([':-)', ';~D', ':-D', ':_D']);
+
+console.log(countSmileys([':-)', ';~D', ':-D', ':_D']));
