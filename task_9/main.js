@@ -1,7 +1,5 @@
 function createPhoneNumber(numbers) {
-    if (numbers === /^[A-Za-z]+$/) {
-        return;
-    } else if (numbers === undefined) {
+    if (numbers === undefined) {
         return;
     }
     for (let num = 0; num < numbers.length; num++) {
