@@ -25,4 +25,4 @@ function persistence(num) {
 
 console.log(persistence(39));
 // console.log(persistence(4));
-// console.log(persistence(999));
+console.log(persistence(999));
