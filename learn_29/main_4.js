@@ -22,18 +22,14 @@
 // console.log(resultArray); // [1, 2, 2, 3, 3, 4, 4]
 
 function deleteNth(arr, n) {
-    let count = {}; // Объект для отслеживания количества вхождений элементов
+    let count = {};
     let result = [];
 
     for (let i = 0; i < arr.length; i++) {
         let current = arr[i];
-
-        // Увеличиваем счетчик для текущего элемента
         count[current] = (count[current] || 0) + 1;
 
-        // Проверяем, сколько раз уже встречался текущий элемент
         if (count[current] <= n) {
-            // Если не превышает n, добавляем в результирующий массив
             result.push(current);
         }
     }
