@@ -60,37 +60,58 @@
 //         console.error('Произошла ошибка при выполнении функции:', error);
 //     });
 
-const data = {
-    id: '2',
-};
-fetch('https://657c4aa6853beeefdb991ce8.mockapi.io/test', {
-    method: 'Get',
-    headers: {
-        'Content-Type': 'application/json',
-        // Другие заголовки, если необходимо
-    },
-})
-    .then((data) => {
-        return data.json();
-    })
-    .then((response) => {
-        console.log(response);
-    })
-    .catch((error) => {
-        console.error('Error', error);
-    });
-setTimeout(() => {
-    fetch('https://657c4aa6853beeefdb991ce8.mockapi.io/test')
-        .then((response) => {
-            if (response.status !== 200) {
-                console.log('Status:', response.status);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-        })
-        .catch((error) => {
-            console.error('Error', error);
+// const data = {
+//     id: '2',
+// };
+// fetch('https://657c4aa6853beeefdb991ce8.mockapi.io/test', {
+//     method: 'Get',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         // Другие заголовки, если необходимо
+//     },
+// })
+//     .then((data) => {
+//         return data.json();
+//     })
+//     .then((response) => {
+//         console.log(response);
+//     })
+//     .catch((error) => {
+//         console.error('Error', error);
+//     });
+// setTimeout(() => {
+//     fetch('https://657c4aa6853beeefdb991ce8.mockapi.io/test')
+//         .then((response) => {
+//             if (response.status !== 200) {
+//                 console.log('Status:', response.status);
+//             }
+//             return response.json();
+//         })
+//         .then((data) => {
+//             console.log(data);
+//         })
+//         .catch((error) => {
+//             console.error('Error', error);
+//         });
+// }, 1000);
+
+async function fetchData(id) {
+    try {
+        const response = await fetch('https://657caa6853beeefdb991ce8.mockapi.io/test', {
+            method: 'Post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(id),
         });
-}, 1000);
+        if (!response.ok) {
+            console.log('Status:', response.status);
+        }
+        const responseData = await response.json();
+        console.log('data:', responseData);
+        return responseData;
+    } catch (error) {
+        console.log('Error', error);
+    }
+}
+fetchData({ task: '1234' });
