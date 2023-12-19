@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.header--svg {
+    width: 1300px;
+    height: 900px;
+    position: absolute;
+    z-index: 0;
+}
+
+.header--gif {
+    position: absolute;
+    z-index: 1;
+    width: 237px;
+    height: 133px;
+    transform: translate(-5px, 369px);
+}
